@@ -32,15 +32,24 @@ function initLoader() {
     setTimeout(() => loader.remove(), 800);
   };
 
-  // Dismiss on mouse move
-  document.addEventListener('mousemove', () => {
+  // Dismiss on click or touch (reliable for audio autoplay)
+  const startApp = () => {
     const audio = document.getElementById('bgAudio');
     if (audio) {
       audio.muted = false;
-      audio.play();
+      audio.play().catch(err => console.log("Autoplay blocked:", err));
     }
     dismiss();
-  }, { once: true });
+  };
+
+  // Prompt for interaction after 'initialization'
+  setTimeout(() => {
+    const loaderText = loader.querySelector('.loader__text');
+    if (loaderText) loaderText.textContent = 'Click anywhere to enter';
+  }, 2200);
+
+  document.addEventListener('click', startApp, { once: true });
+  document.addEventListener('touchstart', startApp, { once: true });
 }
 
 /* ── Holographic Skill Cards (cursor-tracking foil) ── */
@@ -472,13 +481,11 @@ function initAudioToggle() {
     toggleBtn.classList.toggle('playing', isPlaying);
   };
 
-  // Force play muted immediately
+  // Attempt playback (muted often allowed)
   setTimeout(() => {
-    audio.play().then(() => {
-      updateToggleState();
-    }).catch(() => {
-      updateToggleState();
-    });
+    audio.play()
+      .then(updateToggleState)
+      .catch(updateToggleState);
   }, 500);
 
   // Unmute on first interaction
