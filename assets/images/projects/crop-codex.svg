@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#84cc16;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow6">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad6)"/>
+  <path d="M 0 350 Q 200 300, 400 350 T 800 350 L 800 450 L 0 450 Z" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="400" cy="140" r="68" fill="rgba(255,255,255,0.17)" filter="url(#glow6)"/>
+  <text x="400" y="168" font-family="Arial, sans-serif" font-size="78" font-weight="bold" fill="white" text-anchor="middle" filter="url(#glow6)">🌾</text>
+  <rect x="180" y="210" width="440" height="4" fill="rgba(255,255,255,0.4)" rx="2"/>
+  <text x="400" y="270" font-family="Arial, sans-serif" font-size="56" font-weight="800" fill="white" text-anchor="middle" opacity="0.98">Crop Codex</text>
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,0.87)" text-anchor="middle">Blockchain Contract Farming</text>
+  <rect x="210" y="330" width="380" height="58" fill="rgba(255,255,255,0.13)" rx="29"/>
+  <text x="400" y="365" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="rgba(255,255,255,0.95)" text-anchor="middle">Smart Contracts • Secure Transactions</text>
+  <circle cx="650" cy="100" r="50" fill="rgba(255,255,255,0.07)"/>
+  <circle cx="150" cy="380" r="60" fill="rgba(255,255,255,0.07)"/>
+</svg>

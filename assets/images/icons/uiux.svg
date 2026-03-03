@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Pen tool -->
+  <path d="M25 75L45 20l10 15-5 40z" stroke="#F472B6" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Cursor -->
+  <path d="M55 30l20 25-10 2-5 12-5-12-10-2z" fill="#F472B6" opacity="0.8"/>
+  <!-- Grid dots -->
+  <circle cx="20" cy="20" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="40" cy="20" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="60" cy="20" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="80" cy="20" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="20" cy="40" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="80" cy="40" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="20" cy="60" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="80" cy="60" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="20" cy="80" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="40" cy="80" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="60" cy="80" r="2" fill="#F472B6" opacity="0.3"/>
+  <circle cx="80" cy="80" r="2" fill="#F472B6" opacity="0.3"/>
+</svg>

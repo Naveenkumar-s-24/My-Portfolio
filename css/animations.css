@@ -1,0 +1,609 @@
+/* ============================================
+   Animations & Keyframes — Premium
+   ============================================ */
+
+/* ── Fade In Up ── */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Fade In Down ── */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Fade In Left ── */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ── Fade In Right ── */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ── Scale In ── */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ── Float ── */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+/* ── Pulse Glow ── */
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1.08);
+    }
+}
+
+/* ── Spin Slow ── */
+@keyframes spinSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Shimmer ── */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* ── Blink Cursor ── */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ── Slide In Up ── */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ── Gradient Shift ── */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ── Animation Utility Classes ── */
+.anim-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-fade-in-down {
+    opacity: 0;
+    animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-fade-in-left {
+    opacity: 0;
+    animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-fade-in-right {
+    opacity: 0;
+    animation: fadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-scale-in {
+    opacity: 0;
+    animation: scaleIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-float {
+    animation: float 5s ease-in-out infinite;
+}
+
+/* ── Scroll-triggered ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.88);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ── Stagger Delays ── */
+.delay-1 {
+    animation-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+
+.delay-4 {
+    animation-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+
+.delay-5 {
+    animation-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.delay-6 {
+    animation-delay: 0.6s;
+    transition-delay: 0.6s;
+}
+
+.delay-7 {
+    animation-delay: 0.7s;
+    transition-delay: 0.7s;
+}
+
+.delay-8 {
+    animation-delay: 0.8s;
+    transition-delay: 0.8s;
+}
+
+/* ── Blur Reveal ── */
+@keyframes revealBlur {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+/* ── Rotate Reveal ── */
+@keyframes revealRotate {
+    from {
+        opacity: 0;
+        transform: perspective(600px) rotateX(18deg) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(600px) rotateX(0deg) translateY(0);
+    }
+}
+
+/* ── Ripple ── */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(3.5);
+        opacity: 0;
+    }
+}
+
+/* ── Shimmer Move ── */
+@keyframes shimmerMove {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* ── Reveal Blur Class ── */
+.reveal-blur {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-blur.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* ── Reveal Rotate Class ── */
+.reveal-rotate {
+    opacity: 0;
+    transform: perspective(600px) rotateX(18deg) translateY(30px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: top center;
+}
+
+.reveal-rotate.visible {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg) translateY(0);
+}
+
+/* ── Stagger Children ── */
+.reveal-stagger-children>* {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger-children.visible>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Stat number pulse on reveal ── */
+@keyframes statPop {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.stat__number.animating {
+    animation: statPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Heading underline glow ── */
+.section__title-underline {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    margin: 0.75rem auto 0;
+    box-shadow: 0 0 16px hsla(245, 100%, 69%, 0.5);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section__header.visible .section__title-underline,
+.section__header.section__header--left.visible .section__title-underline {
+    transform: scaleX(1);
+}
+
+/* ── Respect reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-blur,
+    .reveal-rotate,
+    .reveal-stagger-children>* {
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        transform: none !important;
+    }
+}
+
+/* ════════════════════════════════════════
+   NEXT-LEVEL UI — NEW KEYFRAMES
+   ════════════════════════════════════════ */
+
+/* Cinematic Loader */
+@keyframes loaderBarFill {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes loaderExit {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes loaderLogoIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-15deg);
+        filter: blur(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: blur(0);
+    }
+}
+
+@keyframes spinRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hero Name Glitch */
+@keyframes glitchText {
+
+    0%,
+    90%,
+    100% {
+        text-shadow: none;
+        transform: translate(0);
+        clip-path: none;
+        filter: none;
+    }
+
+    2% {
+        text-shadow: -4px 0 hsla(0, 100%, 65%, 0.85), 4px 0 hsla(200, 100%, 65%, 0.85);
+        transform: translate(-2px, 1px);
+        filter: hue-rotate(15deg);
+    }
+
+    4% {
+        text-shadow: 4px 0 hsla(0, 100%, 65%, 0.85), -4px 0 hsla(200, 100%, 65%, 0.85);
+        transform: translate(2px, -1px);
+        filter: hue-rotate(-15deg);
+    }
+
+    6% {
+        text-shadow: -2px 0 hsla(300, 100%, 65%, 0.85), 2px 0 hsla(50, 100%, 65%, 0.85);
+        transform: translate(1px, 0);
+    }
+
+    8% {
+        text-shadow: none;
+        transform: translate(0);
+        filter: none;
+    }
+}
+
+/* Gradient hue cycle for hero text */
+@keyframes gradientCycle {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating tech tag orbital drift */
+@keyframes techOrbit {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    20% {
+        transform: translateY(-14px) rotate(2.5deg);
+    }
+
+    40% {
+        transform: translateY(-7px) rotate(-1.5deg);
+    }
+
+    60% {
+        transform: translateY(-16px) rotate(1.8deg);
+    }
+
+    80% {
+        transform: translateY(-4px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Holographic shimmer sweep */
+@keyframes holoShift {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+/* Ambient section glow breathe */
+@keyframes ambientBreathe {
+
+    0%,
+    100% {
+        opacity: 0.55;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.12);
+    }
+}
+
+/* Neon input glow on focus */
+@keyframes neonInputPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 transparent, inset 0 0 0 transparent;
+    }
+
+    50% {
+        box-shadow: 0 0 28px var(--input-glow-color, hsla(245, 100%, 69%, 0.3)),
+            inset 0 0 16px hsla(245, 100%, 69%, 0.04);
+    }
+}
+
+/* Section ambient orb animation */
+@keyframes orbDrift {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(-30px, 20px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(20px, -15px) scale(0.95);
+    }
+}

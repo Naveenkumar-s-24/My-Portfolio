@@ -1,0 +1,961 @@
+/* ============================================
+   NEXT-LEVEL UI ENHANCEMENTS
+   ============================================ */
+
+/* Smooth scroll snap for sections */
+html {
+    scroll-snap-type: y proximity;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+/* Text selection styling */
+::selection {
+    background: hsla(245, 100%, 69%, 0.3);
+    color: #fff;
+}
+
+/* Smooth image loading */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Enhanced glass cards with shimmer */
+.glass-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent 30%,
+            hsla(245, 100%, 80%, 0.03) 50%,
+            transparent 70%);
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    transition: transform 0.8s ease;
+    pointer-events: none;
+}
+
+.glass-card:hover::before {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Magnetic button effect enhancement */
+.magnetic {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth link underline animation */
+a:not(.btn):not(.social-icon) {
+    position: relative;
+}
+
+a:not(.btn):not(.social-icon)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+a:not(.btn):not(.social-icon):hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Enhanced navbar link active state */
+.navbar__link {
+    position: relative;
+}
+
+.navbar__link::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 80%;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar__link.active::before,
+.navbar__link:hover::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Floating animation for badges */
+.hero__floating-badge {
+    animation: floatSmooth 6s ease-in-out infinite;
+}
+
+@keyframes floatSmooth {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotate(0.5deg);
+    }
+}
+
+/* Tech tag orbital animation */
+.tech-tag {
+    animation: techOrbit var(--orbit-dur, 8s) ease-in-out infinite;
+    animation-delay: var(--orbit-delay, 0s);
+}
+
+/* Smooth project card hover — lift handled in sections.css */
+.project-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Skill card holographic effect */
+.skill-card {
+    --holo-x: 50;
+    --holo-y: 50;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at calc(var(--holo-x) * 1%) calc(var(--holo-y) * 1%),
+            hsla(245, 100%, 80%, 0.08) 0%,
+            transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.skill-card:hover::after {
+    opacity: 1;
+}
+
+/* Enhanced input focus */
+.contact__input,
+.contact__textarea {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsla(245, 100%, 69%, 0.15),
+        0 0 0 3px hsla(245, 100%, 69%, 0.1);
+}
+
+/* Smooth scroll progress bar */
+#scroll-progress {
+    background: var(--gradient-primary);
+    box-shadow: 0 0 20px var(--clr-primary-glow);
+}
+
+/* Achievement card glow on hover */
+.achievement-card:hover,
+.activity-card:hover {
+    box-shadow: 0 12px 40px hsla(245, 100%, 69%, 0.12),
+        inset 0 0 0 1px hsla(245, 100%, 69%, 0.2);
+}
+
+/* Smooth filter button transition */
+.projects__filter-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.projects__filter-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projects__filter-btn.active::before,
+.projects__filter-btn:hover::before {
+    opacity: 0.15;
+}
+
+/* Back to top button enhancement */
+.back-to-top {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.back-to-top:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px hsla(245, 100%, 69%, 0.25);
+}
+
+/* Loader ring animation */
+.loader__ring {
+    animation: spinRing 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+/* Hero image ring rotation */
+.hero__image-ring {
+    animation: spinSlow 20s linear infinite;
+}
+
+.hero__image-ring--2 {
+    animation-direction: reverse;
+    animation-duration: 15s;
+}
+
+/* Smooth section transitions */
+.section {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+/* Enhanced text gradient animation */
+.text-gradient {
+    background-size: 200% 200%;
+    animation: gradientCycle 8s ease infinite;
+}
+
+/* Ideathon hero card enhancement */
+.ideathon-hero {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ideathon-hero:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 80px hsla(245, 100%, 69%, 0.2);
+}
+
+/* Smooth stat number animation */
+.stat__number {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about__stat-card:hover .stat__number {
+    transform: scale(1.1);
+}
+
+/* Enhanced ambient orb */
+.ambient-orb {
+    animation: orbDrift 12s ease-in-out infinite;
+    filter: blur(80px);
+}
+
+/* Noise overlay subtle animation */
+.noise-overlay {
+    animation: noiseShift 0.3s steps(2) infinite;
+}
+
+@keyframes noiseShift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(1px, 1px);
+    }
+
+    100% {
+        transform: translate(-1px, -1px);
+    }
+}
+
+/* Smooth hero glow pulse */
+.hero__bg-glow {
+    animation: ambientBreathe 8s ease-in-out infinite;
+}
+
+.hero__bg-glow--2 {
+    animation-delay: -4s;
+}
+
+/* Image rules kept for any future use */
+.project-card__image {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Smooth overlay fade */
+.project-card__overlay {
+    transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Enhanced chip hover */
+.chip {
+    cursor: pointer;
+}
+
+/* Smooth footer link hover */
+.footer__link {
+    transition: all 0.3s ease;
+}
+
+.footer__link:hover {
+    color: var(--clr-primary-light);
+    transform: translateY(-2px);
+}
+
+/* Enhanced social icon pulse */
+.social-icon {
+    position: relative;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(8px);
+}
+
+.social-icon:hover::before {
+    opacity: 0.4;
+}
+
+/* Smooth timeline item reveal */
+.timeline__item {
+    transition: all 0.3s ease;
+}
+
+.timeline__item:hover {
+    transform: translateX(8px);
+}
+
+/* Enhanced contact item hover */
+.contact__item {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact__item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 32px hsla(245, 100%, 69%, 0.1);
+}
+
+/* Smooth button ripple effect */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: hsla(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Enhanced hero name glitch */
+.hero__name:hover .text-gradient {
+    animation: glitchText 0.3s ease;
+}
+
+/* Smooth cursor trail */
+#cosmicCursor {
+    mix-blend-mode: screen;
+}
+
+/* Enhanced education card */
+.about__edu-card {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about__edu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px hsla(245, 100%, 69%, 0.12);
+}
+
+.about__edu-card:hover .edu-card__accent {
+    transform: scaleX(1);
+}
+
+.edu-card__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Gradient spin for 4-sided card glow ── */
+@keyframes gradientSpin {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ══════════════════════════════════════════════
+   PORTFOLIO-WIDE PREMIUM CARD GLOW SYSTEM
+   ══════════════════════════════════════════════ */
+
+/* ─── GLASS-CARD BASE ─── */
+.glass-card {
+    transition: transform var(--transition-base), box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.glass-card:hover {
+    border-color: hsla(245, 100%, 69%, 0.22);
+    box-shadow:
+        0 0 0 1px hsla(245, 100%, 69%, 0.12),
+        0 8px 32px hsla(0, 0%, 0%, 0.35),
+        0 0 60px hsla(245, 100%, 69%, 0.08);
+}
+
+/* ─── SKILL CARDS ─── */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    background-size: 200% 200%;
+    animation: gradientSpin 4s linear infinite;
+    opacity: 0;
+    transition: opacity var(--transition-base), height var(--transition-base);
+    z-index: 1;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.skill-card::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: calc(var(--radius-xl) + 8px);
+    background: linear-gradient(135deg, hsl(245, 100%, 69%), hsl(165, 100%, 42%), hsl(245, 100%, 69%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(16px);
+    transition: opacity var(--transition-base);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) !important;
+}
+
+.skill-card:hover::before {
+    opacity: 1;
+    height: 3px;
+}
+
+.skill-card:hover::after {
+    opacity: 0.35;
+}
+
+.skill-card:hover {
+    border-color: hsla(245, 100%, 69%, 0.25) !important;
+    box-shadow: 0 0 0 1.5px hsla(245, 100%, 69%, 0.2),
+        0 20px 50px hsla(0, 0%, 0%, 0.4),
+        0 0 40px hsla(245, 100%, 69%, 0.1) !important;
+}
+
+.skill-card:hover .skill-card__icon {
+    background: hsla(245, 100%, 69%, 0.15) !important;
+    border-color: hsla(245, 100%, 69%, 0.4) !important;
+    box-shadow: 0 0 24px hsla(245, 100%, 69%, 0.35), 0 0 48px hsla(245, 100%, 69%, 0.12) !important;
+    transform: scale(1.12) rotate(-3deg) !important;
+}
+
+.skill-card:hover .skill-card__title {
+    color: var(--clr-primary-light);
+}
+
+/* ─── STAT CARDS ─── */
+.about__stat-card {
+    position: relative;
+    overflow: visible;
+}
+
+.about__stat-card::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: calc(var(--radius-xl) + 10px);
+    background: linear-gradient(135deg, hsl(165, 100%, 42%), hsl(245, 100%, 69%), hsl(165, 100%, 42%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(18px);
+    transition: opacity var(--transition-base);
+}
+
+.about__stat-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+}
+
+.about__stat-card:hover::after {
+    opacity: 0.35;
+}
+
+.about__stat-card:hover {
+    border-color: hsla(165, 100%, 42%, 0.28) !important;
+    box-shadow: 0 0 0 1.5px hsla(165, 100%, 42%, 0.2),
+        0 18px 48px hsla(0, 0%, 0%, 0.4),
+        0 0 50px hsla(165, 100%, 42%, 0.12) !important;
+}
+
+/* ─── EDUCATION CARDS ─── */
+.about__edu-card {
+    position: relative;
+    overflow: visible;
+}
+
+.about__edu-card::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: calc(var(--radius-xl) + 10px);
+    background: linear-gradient(135deg, hsl(245, 100%, 69%), hsl(200, 100%, 60%), hsl(245, 100%, 69%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(16px);
+    transition: opacity var(--transition-base);
+}
+
+.about__edu-card:hover::after {
+    opacity: 0.3;
+}
+
+.about__edu-card:hover {
+    transform: translateY(-6px) !important;
+    border-color: hsla(245, 100%, 69%, 0.22) !important;
+    box-shadow: 0 0 0 1.5px hsla(245, 100%, 69%, 0.18),
+        0 16px 48px hsla(0, 0%, 0%, 0.38),
+        0 0 40px hsla(245, 100%, 69%, 0.1) !important;
+}
+
+/* ─── ACHIEVEMENT CARDS ─── */
+.achievement-card {
+    position: relative;
+    overflow: visible;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--clr-accent), var(--clr-primary));
+    border-radius: 0 2px 2px 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+    z-index: 2;
+}
+
+.achievement-card::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: calc(var(--radius-xl) + 10px);
+    background: linear-gradient(135deg, hsl(165, 100%, 42%), hsl(32, 100%, 60%), hsl(165, 100%, 42%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity var(--transition-base);
+}
+
+.achievement-card:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.achievement-card:hover::after {
+    opacity: 0.3;
+}
+
+.achievement-card:hover {
+    transform: translateY(-7px) !important;
+    border-color: hsla(165, 100%, 42%, 0.25) !important;
+    box-shadow: 0 0 0 1.5px hsla(165, 100%, 42%, 0.18),
+        0 18px 50px hsla(0, 0%, 0%, 0.4),
+        0 0 50px hsla(165, 100%, 42%, 0.1) !important;
+}
+
+.achievement-card:hover .achievement-card__icon {
+    background: hsla(165, 100%, 42%, 0.15) !important;
+    border-color: hsla(165, 100%, 42%, 0.4) !important;
+    box-shadow: 0 0 24px hsla(165, 100%, 42%, 0.4), 0 0 48px hsla(165, 100%, 42%, 0.14) !important;
+    transform: scale(1.12) rotate(5deg) !important;
+}
+
+/* ─── ACTIVITY CARDS ─── */
+.activity-card {
+    position: relative;
+    overflow: visible;
+}
+
+.activity-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--clr-primary), var(--clr-accent));
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: opacity var(--transition-base), transform var(--transition-base);
+    z-index: 2;
+    border-radius: 0 2px 2px 0;
+}
+
+.activity-card::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: calc(var(--radius-xl) + 10px);
+    background: linear-gradient(135deg, hsl(245, 100%, 69%), hsl(280, 80%, 65%), hsl(245, 100%, 69%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(16px);
+    transition: opacity var(--transition-base);
+}
+
+.activity-card:hover::before {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.activity-card:hover::after {
+    opacity: 0.28;
+}
+
+.activity-card:hover {
+    transform: translateX(6px) translateY(-4px) !important;
+    border-color: hsla(245, 100%, 69%, 0.25) !important;
+    box-shadow: 0 0 0 1.5px hsla(245, 100%, 69%, 0.18),
+        0 16px 48px hsla(0, 0%, 0%, 0.38),
+        0 0 45px hsla(245, 100%, 69%, 0.1) !important;
+}
+
+.activity-card:hover .activity-card__icon {
+    background: hsla(245, 100%, 69%, 0.15) !important;
+    border-color: hsla(245, 100%, 69%, 0.4) !important;
+    box-shadow: 0 0 24px hsla(245, 100%, 69%, 0.35), 0 0 48px hsla(245, 100%, 69%, 0.1) !important;
+    transform: scale(1.12) rotate(-5deg) !important;
+}
+
+.activity-card:hover .activity-card__title {
+    color: var(--clr-primary-light);
+}
+
+/* ─── TIMELINE ITEMS ─── */
+.timeline__item {
+    padding: var(--space-md) var(--space-md) var(--space-md) 0;
+    border-radius: var(--radius-lg);
+    border: 1px solid transparent;
+    transition: all var(--transition-base);
+}
+
+.timeline__item:hover {
+    transform: translateX(12px) !important;
+}
+
+.timeline__item:hover .timeline__title {
+    color: var(--clr-primary-light);
+    text-shadow: 0 0 10px hsla(245, 100%, 69%, 0.4);
+}
+
+.timeline__item:hover .timeline__date {
+    color: var(--clr-accent);
+}
+
+.timeline__item:hover .timeline__description {
+    color: var(--clr-text-primary);
+}
+
+/* ─── CONTACT INFO ITEMS ─── */
+.contact__item {
+    position: relative;
+    overflow: visible;
+    transition: transform var(--transition-base), box-shadow var(--transition-base),
+        border-color var(--transition-base), background var(--transition-base);
+}
+
+.contact__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--clr-primary), var(--clr-accent));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    z-index: 2;
+}
+
+.contact__item::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: calc(var(--radius-xl) + 10px);
+    background: linear-gradient(135deg, hsl(245, 100%, 69%), hsl(165, 100%, 42%), hsl(245, 100%, 69%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(16px);
+    transition: opacity var(--transition-base);
+}
+
+.contact__item:hover::before {
+    opacity: 1;
+}
+
+.contact__item:hover::after {
+    opacity: 0.25;
+}
+
+.contact__item:hover {
+    transform: translateX(8px) translateY(-2px) !important;
+    border-color: hsla(245, 100%, 69%, 0.22) !important;
+    background: hsla(240, 12%, 10%, 0.7) !important;
+    box-shadow: 0 0 0 1px hsla(245, 100%, 69%, 0.12),
+        0 12px 36px hsla(0, 0%, 0%, 0.35),
+        0 0 40px hsla(245, 100%, 69%, 0.08);
+}
+
+.contact__item:hover .contact__item-icon {
+    background: hsla(245, 100%, 69%, 0.15) !important;
+    border-color: hsla(245, 100%, 69%, 0.4) !important;
+    box-shadow: 0 0 20px hsla(245, 100%, 69%, 0.3) !important;
+    transform: scale(1.1);
+}
+
+/* ─── CONTACT FORM (glows when typing) ─── */
+.contact__form {
+    position: relative;
+    overflow: visible;
+    transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.contact__form::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius-2xl) + 3px);
+    background: linear-gradient(135deg,
+            hsl(245, 100%, 69%), hsl(165, 100%, 42%), hsl(32, 100%, 60%), hsl(245, 100%, 69%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+}
+
+.contact__form::after {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border-radius: calc(var(--radius-2xl) + 17px);
+    background: linear-gradient(135deg,
+            hsl(245, 100%, 69%), hsl(165, 100%, 42%), hsl(245, 100%, 69%));
+    background-size: 300% 300%;
+    animation: gradientSpin 5s linear infinite;
+    z-index: -2;
+    opacity: 0;
+    filter: blur(24px);
+    transition: opacity var(--transition-slow);
+}
+
+.contact__form:focus-within::before {
+    opacity: 1;
+}
+
+.contact__form:focus-within::after {
+    opacity: 0.3;
+}
+
+.contact__form:focus-within {
+    box-shadow: 0 20px 60px hsla(0, 0%, 0%, 0.4);
+}
+
+/* ─── IDEATHON HERO CARD ─── */
+.ideathon-hero {
+    position: relative;
+    overflow: visible !important;
+}
+
+.ideathon-hero::after {
+    content: '';
+    position: absolute;
+    inset: -16px;
+    border-radius: calc(var(--radius-2xl) + 18px);
+    background: linear-gradient(135deg,
+            hsl(245, 100%, 69%), hsl(165, 100%, 42%), hsl(32, 100%, 60%), hsl(245, 100%, 69%));
+    background-size: 300% 300%;
+    animation: gradientSpin 4s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(28px);
+    transition: opacity var(--transition-base);
+}
+
+.ideathon-hero:hover::after {
+    opacity: 0.5;
+}
+
+.ideathon-hero:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 28px 80px hsla(0, 0%, 0%, 0.45),
+        0 0 60px hsla(245, 100%, 69%, 0.15) !important;
+}
+
+/* ─── CHIP GLOW UPGRADE ─── */
+.chip:hover {
+    border-color: var(--clr-primary) !important;
+    color: var(--clr-primary-light) !important;
+    background: hsla(245, 100%, 69%, 0.1) !important;
+    box-shadow: 0 0 12px hsla(245, 100%, 69%, 0.22), 0 0 24px hsla(245, 100%, 69%, 0.08);
+    transform: translateY(-2px) scale(1.04) !important;
+}
+
+
+/* ─── MUSIC BARS ANIMATION (Audio Toggle Replacement) ─── */
+.audio-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    width: auto !important;
+    /* Allow width to expand for text */
+    min-width: 48px;
+}
+
+.bars-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 16px;
+}
+
+.bar {
+    width: 3px;
+    height: 4px;
+    background: var(--clr-primary-light);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+/* Animation sequence when playing */
+.audio-toggle.playing .bar {
+    animation: musicBarAnimate 0.8s ease-in-out infinite;
+}
+
+.audio-toggle.playing .bar:nth-child(2) {
+    animation-duration: 0.4s;
+    animation-delay: -0.2s;
+}
+
+.audio-toggle.playing .bar:nth-child(3) {
+    animation-duration: 0.6s;
+    animation-delay: -0.4s;
+}
+
+@keyframes musicBarAnimate {
+
+    0%,
+    100% {
+        height: 4px;
+    }
+
+    50% {
+        height: 16px;
+    }
+}
+
+.audio-status-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--clr-primary-light);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Toggle Text Play/Pause */
+.audio-toggle.playing .audio-status-text::after {
+    content: 'PAUSE';
+}
+
+.audio-toggle:not(.playing) .audio-status-text::after {
+    content: 'PLAY';
+}

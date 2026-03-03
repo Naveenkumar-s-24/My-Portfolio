@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-naveen",
+  "version": "1.0.0",
+  "description": "Naveen Kumar Suresh Portfolio",
+  "scripts": {
+    "start": "serve -l 2005 ."
+  },
+  "dependencies": {
+    "serve": "^14.2.5"
+  }
+}

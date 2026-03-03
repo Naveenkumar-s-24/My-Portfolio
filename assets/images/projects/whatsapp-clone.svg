@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow7">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad7)"/>
+  <ellipse cx="400" cy="225" rx="320" ry="170" fill="rgba(255,255,255,0.09)"/>
+  <circle cx="400" cy="140" r="68" fill="rgba(255,255,255,0.17)" filter="url(#glow7)"/>
+  <text x="400" y="168" font-family="Arial, sans-serif" font-size="78" font-weight="bold" fill="white" text-anchor="middle" filter="url(#glow7)">💬</text>
+  <rect x="180" y="210" width="440" height="4" fill="rgba(255,255,255,0.4)" rx="2"/>
+  <text x="400" y="270" font-family="Arial, sans-serif" font-size="52" font-weight="800" fill="white" text-anchor="middle" opacity="0.98">Decentralized Media</text>
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="22" font-weight="500" fill="rgba(255,255,255,0.87)" text-anchor="middle">Real-Time Messaging App</text>
+  <rect x="210" y="330" width="380" height="58" fill="rgba(255,255,255,0.13)" rx="29"/>
+  <text x="400" y="365" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="rgba(255,255,255,0.95)" text-anchor="middle">Group Chat • Media Share • Socket.IO</text>
+  <circle cx="680" cy="110" r="55" fill="rgba(255,255,255,0.07)"/>
+  <circle cx="120" cy="360" r="65" fill="rgba(255,255,255,0.07)"/>
+</svg>

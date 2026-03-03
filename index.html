@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Naveen Kumar Suresh — Software Developer, UI/UX Designer, and Blockchain Technologist. Building real-world software systems." />
+  <meta name="keywords"
+    content="portfolio, developer, full-stack, AI, UI/UX, blockchain, software systems, React, Python" />
+  <meta name="author" content="Naveen Kumar Suresh" />
+  <title>Naveen Kumar Suresh | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Google Fonts – Inter + Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/enhancements.css" />
+  <link rel="stylesheet" href="css/project-modal.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <!-- ══ Cinematic Loader ══ -->
+  <div id="page-loader">
+    <div class="loader__ring"></div>
+    <div class="loader__logo">NS</div>
+    <div class="loader__bar-wrap">
+      <div class="loader__bar"></div>
+    </div>
+    <p class="loader__text">Initializing...</p>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Cosmic Cursor Canvas -->
+  <canvas id="cosmicCursor"></canvas>
+
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Noise Overlay for texture -->
+  <div class="noise-overlay"></div>
+
+  <!-- ════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        <span class="navbar__logo-text">N</span><span class="navbar__logo-dot">.</span>
+      </a>
+
+      <ul class="navbar__links" id="navLinks">
+        <li><a href="#hero" class="navbar__link active">Home</a></li>
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <li><a href="#skills" class="navbar__link">Skills</a></li>
+        <li><a href="#projects" class="navbar__link">Projects</a></li>
+        <li><a href="#experience" class="navbar__link">Experience</a></li>
+        <li><a href="#achievements" class="navbar__link">Achievements</a></li>
+        <li><a href="#certifications" class="navbar__link">Certifications</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+      </ul>
+
+      <div class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+       HERO SECTION
+       ════════════════════════════════════════ -->
+  <!-- Ambient section orbs (JS will toggle classes) -->
+  <div id="ambient-orb" class="ambient-orb"></div>
+
+  <section class="hero section" id="hero">
+    <div class="hero__bg-glow hero__bg-glow--1" data-parallax-speed="0.5"></div>
+    <div class="hero__bg-glow hero__bg-glow--2" data-parallax-speed="0.3"></div>
+    <div class="hero__grid-bg"></div>
+
+    <div class="container hero__content">
+      <!-- Text Side -->
+      <div class="hero__text">
+        <span class="hero__greeting anim-fade-in-down">
+          <span class="hero__greeting-dot"></span>
+          Available for work
+        </span>
+
+        <h1 class="hero__name anim-fade-in-up delay-1">
+          Hi, I'm <span class="text-gradient">Naveen</span><br>
+          <span class="hero__name-sub">Kumar Suresh</span>
+        </h1>
+
+        <p class="hero__tagline anim-fade-in-up delay-2">
+          <span class="typed"
+            data-typed="Software Developer|UI/UX Designer|Blockchain Technologist|System Architect"></span><span
+            class="typed-cursor">|</span>
+        </p>
+
+        <p class="hero__description anim-fade-in-up delay-3">
+          Pre-final year B.Tech IT student building real-world systems across
+          <strong>AI</strong>, <strong>Cloud</strong>, <strong>Blockchain</strong> & <strong>Full-Stack
+            Development</strong>.
+        </p>
+
+        <div class="hero__cta anim-fade-in-up delay-3">
+          <a href="#projects" class="btn btn--primary magnetic">
+            <span>View Projects</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn--outline magnetic">
+            <span>Get in Touch</span>
+          </a>
+          <a href="resume.pdf" target="_blank" class="btn btn--ghost magnetic">
+            <span>Resume ↓</span>
+          </a>
+        </div>
+
+        <div class="hero__socials anim-fade-in-up delay-4">
+          <a href="https://github.com/Naveenkumar-s-24" target="_blank" class="social-icon magnetic tooltip"
+            data-tooltip="GitHub" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/naveenkumarsuresh" target="_blank" class="social-icon magnetic tooltip"
+            data-tooltip="LinkedIn" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="mailto:naveenkumarsuresh2005@gmail.com" class="social-icon magnetic tooltip" data-tooltip="Email"
+            aria-label="Email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+              <path
+                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual Side -->
+      <div class="hero__visual anim-scale-in delay-2">
+        <div class="hero__image-wrapper">
+          <div class="hero__image-ring"></div>
+          <div class="hero__image-ring hero__image-ring--2"></div>
+          <img src="assets/images/hero/profile.png" alt="Naveen Kumar Suresh" class="hero__image" />
+          <div class="hero__image-glow"></div>
+        </div>
+        <div class="hero__floating-badge hero__floating-badge--top anim-float">
+          <span class="badge-pulse"></span> ⚡ Software Developer
+        </div>
+        <div class="hero__floating-badge hero__floating-badge--bottom anim-float" style="animation-delay: -2.5s;">
+          🎨 UI/UX Designer
+        </div>
+        <div class="hero__floating-badge hero__floating-badge--left anim-float" style="animation-delay: -1.5s;">
+          ⛓️ Blockchain
+        </div>
+
+        <!-- Floating Tech Tag Cloud -->
+        <div class="tech-tag-cloud">
+          <span class="tech-tag"
+            style="--orbit-delay:-1.5s;--orbit-dur:7s;  top:-14%; left:50%;  transform:translateX(-50%);">⚛️
+            React</span>
+          <span class="tech-tag"
+            style="--orbit-delay:-2.2s;--orbit-dur:6.5s;bottom:-14%;left:50%;transform:translateX(-50%);">⬡
+            Solidity</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════════════
+       ABOUT SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__header reveal-blur">
+        <span class="section__subtitle">About Me</span>
+        <h2 class="section__title">Passionate About Building <span class="text-gradient">Real-World Systems</span></h2>
+      </div>
+
+      <div class="about__content">
+        <div class="about__text reveal-left">
+          <p>
+            Pre-final year B.Tech Information Technology student at Panimalar Engineering College, Chennai,
+            focused on turning complex ideas into working software systems. Experienced in AI-driven applications,
+            system design, cloud infrastructure, and blockchain platforms.
+          </p>
+          <p>
+            Strong track record of leading projects, coordinating large-scale innovation events (IDEATHON 4.0 with 463
+            teams),
+            and delivering real-world engineering solutions. I've won hackathons with 900+ competing teams
+            and interned at HCLTech, TANSAM (TN Govt), Kaashiv Infotech, and DevTown.
+          </p>
+        </div>
+
+        <div class="about__stats reveal-right">
+          <div class="about__stat-card glass-card">
+            <div class="stat__number" data-target="8">0</div>
+            <div class="stat__label">Projects Built</div>
+          </div>
+          <div class="about__stat-card glass-card">
+            <div class="stat__number" data-target="4">0</div>
+            <div class="stat__label">Internships</div>
+          </div>
+          <div class="about__stat-card glass-card">
+            <div class="stat__number" data-target="5">0</div>
+            <div class="stat__label">Achievements</div>
+          </div>
+          <div class="about__stat-card glass-card">
+            <div class="stat__number" data-target="8" data-suffix=".8">0</div>
+            <div class="stat__label">CGPA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="about__education reveal">
+        <h3 class="about__education-title">🎓 Education</h3>
+        <div class="about__education-grid">
+          <div class="about__edu-card glass-card">
+            <div class="edu-card__accent"></div>
+            <h4>B.Tech — Information Technology</h4>
+            <p class="text-muted">Panimalar Engineering College, Chennai</p>
+            <p class="text-muted">2023 – 2027 · <span class="text-gradient">CGPA: 8.8 / 10</span></p>
+          </div>
+          <div class="about__edu-card glass-card">
+            <div class="edu-card__accent"></div>
+            <h4>Higher Secondary Education (HSE)</h4>
+            <p class="text-muted">JGVV Matriculation Higher Secondary School</p>
+            <p class="text-muted">2021 – 2023 · <span class="text-gradient">Score: 90%</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SKILLS SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section__header reveal-blur">
+        <span class="section__subtitle">My Skills</span>
+        <h2 class="section__title">Technologies I <span class="text-gradient">Work With</span></h2>
+      </div>
+
+      <div class="skills__grid reveal-stagger-children">
+        <!-- Programming Languages -->
+        <div class="skill-card glass-card reveal delay-1">
+          <div class="skill-card__icon">💻</div>
+          <h3 class="skill-card__title">Languages</h3>
+          <div class="skill-card__list">
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+          </div>
+        </div>
+
+        <!-- Frontend & UI/UX -->
+        <div class="skill-card glass-card reveal delay-2">
+          <div class="skill-card__icon">🎨</div>
+          <h3 class="skill-card__title">Frontend & UI/UX</h3>
+          <div class="skill-card__list">
+            <span class="chip">React.js</span>
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">HTML/CSS</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Prototyping</span>
+          </div>
+        </div>
+
+        <!-- Backend & Systems -->
+        <div class="skill-card glass-card reveal delay-3">
+          <div class="skill-card__icon">⚙️</div>
+          <h3 class="skill-card__title">Backend & Systems</h3>
+          <div class="skill-card__list">
+            <span class="chip">Node.js</span>
+            <span class="chip">Flask</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">System Design</span>
+            <span class="chip">STL / 3D Viz</span>
+          </div>
+        </div>
+
+        <!-- Cloud & Databases -->
+        <div class="skill-card glass-card reveal delay-4">
+          <div class="skill-card__icon">☁️</div>
+          <h3 class="skill-card__title">Cloud & Databases</h3>
+          <div class="skill-card__list">
+            <span class="chip">AWS</span>
+            <span class="chip">Azure</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">MongoDB</span>
+          </div>
+        </div>
+
+        <!-- Blockchain -->
+        <div class="skill-card glass-card reveal delay-5">
+          <div class="skill-card__icon">⛓️</div>
+          <h3 class="skill-card__title">Blockchain</h3>
+          <div class="skill-card__list">
+            <span class="chip">Solidity</span>
+            <span class="chip">Ethereum</span>
+            <span class="chip">Smart Contracts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       PROJECTS SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__header reveal-blur">
+        <span class="section__subtitle">My Work</span>
+        <h2 class="section__title">Featured <span class="text-gradient">Projects</span></h2>
+        <p class="section__description">A selection of projects that showcase my skills across various domains.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="projects__filters reveal">
+        <button class="projects__filter-btn active" data-filter="all">All</button>
+        <button class="projects__filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="projects__filter-btn" data-filter="ai">AI / ML</button>
+        <button class="projects__filter-btn" data-filter="blockchain">Blockchain</button>
+        <button class="projects__filter-btn" data-filter="systems">Systems</button>
+      </div>
+
+      <!-- Project Cards -->
+      <div class="projects__grid">
+        <div class="project-card reveal delay-1" data-category="systems">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">Systems</span>
+              <span class="project-card__num">01</span>
+            </div>
+            <h3 class="project-card__title">Automated Footwear 3D QC</h3>
+            <p class="project-card__description">Automated 3D quality control system with STL processing, sensor-based
+              measurement, and XYZ plane grid visualization.</p>
+            <div class="project-card__tech">
+              <span class="chip">Python</span><span class="chip">STL</span><span class="chip">3D Viz</span><span
+                class="chip">Sensors</span>
+            </div>
+            <div class="project-card__links">
+              <span class="btn btn--ghost" style="opacity: 0.5; cursor: not-allowed;">In Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-2" data-category="ai">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">AI / ML</span>
+              <span class="project-card__num">02</span>
+            </div>
+            <h3 class="project-card__title">MetrOps</h3>
+            <p class="project-card__description">AI-driven metro scheduling improving train punctuality by 70% with
+              crowd forecasting and real-time analytics dashboard.</p>
+            <div class="project-card__tech">
+              <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">FastAPI</span><span
+                class="chip">Scikit-learn</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/Naveenkumar-s-24/MetrOps" target="_blank" class="btn btn--ghost">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-3" data-category="ai">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">AI / ML</span>
+              <span class="project-card__num">03</span>
+            </div>
+            <h3 class="project-card__title">CueBlink</h3>
+            <p class="project-card__description">92% accuracy eye-blink detection with real-time text-to-speech using
+              CNN-based detection, OpenCV, and Flask + React.js.</p>
+            <div class="project-card__tech">
+              <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">CNN</span><span
+                class="chip">React.js</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/Naveenkumar-s-24/CueBlink" target="_blank" class="btn btn--ghost">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-1" data-category="fullstack">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">Full-Stack</span>
+              <span class="project-card__num">04</span>
+            </div>
+            <h3 class="project-card__title">DropNex</h3>
+            <p class="project-card__description">Warehouse-free direct retailer delivery platform with real-time
+              tracking and optimized routes for Tier 2/3 cities.</p>
+            <div class="project-card__tech">
+              <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">React.js</span><span
+                class="chip">Firebase</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/Naveenkumar-s-24/DropNex" target="_blank" class="btn btn--ghost">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-2" data-category="fullstack">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">Full-Stack</span>
+              <span class="project-card__num">05</span>
+            </div>
+            <h3 class="project-card__title">Fusion Circle</h3>
+            <p class="project-card__description">Collaborative platform boosting team productivity by ~35% with
+              real-time project tracking and AI-based task prioritization.</p>
+            <div class="project-card__tech">
+              <span class="chip">React.js</span><span class="chip">Flask</span><span class="chip">MongoDB</span><span
+                class="chip">Tailwind</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/Naveenkumar-s-24/Fusion-Circle" target="_blank" class="btn btn--ghost">GitHub
+                →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-3" data-category="blockchain">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">Blockchain</span>
+              <span class="project-card__num">06</span>
+            </div>
+            <h3 class="project-card__title">Crop Codex</h3>
+            <p class="project-card__description">Blockchain contract farming platform with secure farmer–buyer
+              contracts, encrypted negotiations, and transparent transactions.</p>
+            <div class="project-card__tech">
+              <span class="chip">Solidity</span><span class="chip">Ethereum</span><span class="chip">Python</span>
+            </div>
+            <div class="project-card__links">
+              <span class="btn btn--ghost" style="opacity: 0.5; cursor: not-allowed;">In Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-1" data-category="fullstack">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">Full-Stack</span>
+              <span class="project-card__num">07</span>
+            </div>
+            <h3 class="project-card__title">Decentralized Media</h3>
+            <p class="project-card__description">Feature-rich real-time messaging platform with group chat, media
+              sharing, status updates, and end-to-end message delivery powered by Socket.IO and Firebase.</p>
+            <div class="project-card__tech">
+              <span class="chip">React.js</span><span class="chip">Node.js</span><span
+                class="chip">Socket.IO</span><span class="chip">Firebase</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/Naveenkumar-s-24/Decentralized-Media" target="_blank"
+                class="btn btn--ghost">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-2" data-category="fullstack">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">Full-Stack</span>
+              <span class="project-card__num">08</span>
+            </div>
+            <h3 class="project-card__title">Northern Lights Event Planners</h3>
+            <p class="project-card__description">Large-scale event management platform with AI venue suggestions,
+              real-time budgeting, vendor coordination, and Mood Visualizer.</p>
+            <div class="project-card__tech">
+              <span class="chip">React.js</span><span class="chip">Node.js</span><span class="chip">AI</span><span
+                class="chip">Dashboard</span>
+            </div>
+            <div class="project-card__links">
+              <span class="btn btn--ghost" style="opacity: 0.5; cursor: not-allowed;">In Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-3" data-category="ai">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">AI / Full-Stack</span>
+              <span class="project-card__num">09</span>
+            </div>
+            <h3 class="project-card__title">Culina</h3>
+            <p class="project-card__description">AI-powered recipe discovery platform with an interactive world cuisine
+              map, AI chatbot, Fusion Lab, Molecular Oracle, Flavor Radar, and gamified Chef Quest challenges.</p>
+            <div class="project-card__tech">
+              <span class="chip">React 19</span><span class="chip">FastAPI</span><span class="chip">D3.js</span><span
+                class="chip">Python</span><span class="chip">SQLite</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/Naveenkumar-s-24/Culina" target="_blank" class="btn btn--ghost">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal delay-1" data-category="fullstack">
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <span class="project-card__category">Full-Stack</span>
+              <span class="project-card__num">10</span>
+            </div>
+            <h3 class="project-card__title">WhatsApp Clone</h3>
+            <p class="project-card__description">A full-featured WhatsApp-like messaging application with real-time
+              chat, group messaging, media sharing, user authentication, and status updates.</p>
+            <div class="project-card__tech">
+              <span class="chip">React.js</span><span class="chip">Node.js</span><span
+                class="chip">Socket.IO</span><span class="chip">Firebase</span>
+            </div>
+            <div class="project-card__links">
+              <span class="btn btn--ghost" style="opacity: 0.5; cursor: not-allowed;">In Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       EXPERIENCE SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__subtitle">Experience</span>
+        <h2 class="section__title">Where I've <span class="text-gradient">Worked</span></h2>
+      </div>
+
+      <div class="experience__content">
+        <div class="timeline">
+          <div class="timeline__item reveal-left">
+            <span class="timeline__date">Jan 2026 – Mar 2026</span>
+            <h3 class="timeline__title">Software Development Intern</h3>
+            <p class="timeline__subtitle">TANSAM (Tamil Nadu Government) · Tamil Nadu</p>
+            <p class="timeline__description">Worked on advanced engineering software for 3D model handling and
+              visualization. Implemented XYZ plane grid visualization similar to Autodesk Fusion 360 and optimized
+              workflows for large-scale 3D models.</p>
+          </div>
+
+          <div class="timeline__item reveal delay-1">
+            <span class="timeline__date">Dec 2025 – Jan 2026</span>
+            <h3 class="timeline__title">UI/UX Development Intern</h3>
+            <p class="timeline__subtitle">HCLTech · India</p>
+            <p class="timeline__description">Designed user-centric UI/UX solutions improving usability and visual
+              consistency. Created wireframes and high-fidelity prototypes, applied accessibility standards, and
+              optimized user flows.</p>
+          </div>
+
+          <div class="timeline__item reveal delay-2">
+            <span class="timeline__date">Nov 2024 – Dec 2024</span>
+            <h3 class="timeline__title">Cloud Computing Intern</h3>
+            <p class="timeline__subtitle">Kaashiv Infotech · Chennai (Offline)</p>
+            <p class="timeline__description">Gained hands-on experience in scalable cloud deployment, serverless
+              operations, and real-time data handling using AWS and Azure platforms.</p>
+          </div>
+
+          <div class="timeline__item reveal delay-3">
+            <span class="timeline__date">Jan 2024 – Apr 2024</span>
+            <h3 class="timeline__title">Full-Stack Development Intern</h3>
+            <p class="timeline__subtitle">DevTown · Online</p>
+            <p class="timeline__description">Developed responsive full-stack applications, optimized performance, and
+              collaborated using Git, GitHub, and DevOps tools for streamlined deployments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       ACHIEVEMENTS SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <div class="section__header reveal-blur">
+        <span class="section__subtitle">Achievements</span>
+        <h2 class="section__title">Milestones & <span class="text-gradient">Recognition</span></h2>
+      </div>
+
+      <div class="achievements__grid">
+        <div class="achievement-card glass-card reveal delay-1">
+          <div class="achievement-card__icon">🏆</div>
+          <div>
+            <h3 class="achievement-card__title">Winner – PRAEST HACK 2025</h3>
+            <p class="achievement-card__description">First place at Sairam Engineering College, competing against 900+
+              teams.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-2">
+          <div class="achievement-card__icon">🏆</div>
+          <div>
+            <h3 class="achievement-card__title">Best Project – THINKFINITY 2K25</h3>
+            <p class="achievement-card__description">Awarded Best Project at Sriram Engineering College among 400+
+              teams.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-3">
+          <div class="achievement-card__icon">🥈</div>
+          <div>
+            <h3 class="achievement-card__title">Runner-Up – Idea Pitch</h3>
+            <p class="achievement-card__description">Secured Runner-Up at the Idea Pitch competition, National
+              Engineering College.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-4">
+          <div class="achievement-card__icon">🏅</div>
+          <div>
+            <h3 class="achievement-card__title">Finalist – Ideathon</h3>
+            <p class="achievement-card__description">Reached the finals at the Ideathon organized by Panimalar
+              Engineering College.</p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CERTIFICATIONS SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__subtitle">Certifications</span>
+        <h2 class="section__title">Verified <span class="text-gradient">Skills</span></h2>
+      </div>
+
+      <div class="achievements__grid">
+        <div class="achievement-card glass-card reveal delay-1">
+          <div class="achievement-card__icon">📜</div>
+          <div>
+            <h3 class="achievement-card__title">HTML Basics</h3>
+            <p class="achievement-card__description">Issued by PEC · 2023</p>
+            <a href="assets/certificates/html-basics.pdf" target="_blank" class="btn btn--ghost"
+              style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">View Certificate →</a>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-2">
+          <div class="achievement-card__icon">🤖</div>
+          <div>
+            <h3 class="achievement-card__title">Oracle (Gen AI)</h3>
+            <p class="achievement-card__description">Issued by Oracle · 2023</p>
+            <a href="assets/certificates/oracle-gen-ai.pdf" target="_blank" class="btn btn--ghost"
+              style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">View Certificate →</a>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-3">
+          <div class="achievement-card__icon">🐍</div>
+          <div>
+            <h3 class="achievement-card__title">Python Basics</h3>
+            <p class="achievement-card__description">Issued by PEC · 2023</p>
+            <a href="assets/certificates/python-basics.pdf" target="_blank" class="btn btn--ghost"
+              style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">View Certificate →</a>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-4">
+          <div class="achievement-card__icon">📊</div>
+          <div>
+            <h3 class="achievement-card__title">Big Data Computing</h3>
+            <p class="achievement-card__description">Issued by NPTEL · 2023</p>
+            <a href="assets/certificates/nptel-big-data.pdf" target="_blank" class="btn btn--ghost"
+              style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">View Certificate →</a>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-5">
+          <div class="achievement-card__icon">🚀</div>
+          <div>
+            <h3 class="achievement-card__title">Kafka Basics</h3>
+            <p class="achievement-card__description">Issued by Great Learning · 2023</p>
+            <a href="assets/certificates/kafka-basics.pdf" target="_blank" class="btn btn--ghost"
+              style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">View Certificate →</a>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-6">
+          <div class="achievement-card__icon">💻</div>
+          <div>
+            <h3 class="achievement-card__title">Programming Basics</h3>
+            <p class="achievement-card__description">Issued by Great Learning · 2023</p>
+            <a href="assets/certificates/programming-basics.pdf" target="_blank" class="btn btn--ghost"
+              style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">View Certificate →</a>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal delay-7">
+          <div class="achievement-card__icon">🎨</div>
+          <div>
+            <h3 class="achievement-card__title">Graphic Design</h3>
+            <p class="achievement-card__description">Issued by Great Learning · 2023</p>
+            <a href="assets/certificates/graphic-design.pdf" target="_blank" class="btn btn--ghost"
+              style="margin-top: 10px; padding: 5px 10px; font-size: 0.8rem;">View Certificate →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       ACTIVITIES & LEADERSHIP SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="activities">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__subtitle">Beyond Code</span>
+        <h2 class="section__title">Activities & <span class="text-gradient">Leadership</span></h2>
+      </div>
+
+      <!-- ★ IDEATHON 4.0 — Highlighted Hero Card ★ -->
+      <div class="ideathon-hero reveal-rotate">
+        <div class="ideathon-hero__glow"></div>
+        <div class="ideathon-hero__content">
+          <div class="ideathon-hero__badge">⭐ Flagship Achievement</div>
+          <h3 class="ideathon-hero__title">Lead Coordinator — <span class="text-gradient">IDEATHON 4.0</span></h3>
+          <p class="ideathon-hero__subtitle">In collaboration with <strong>Capgemini</strong></p>
+          <div class="ideathon-hero__stats">
+            <div class="ideathon-stat">
+              <span class="ideathon-stat__number">463</span>
+              <span class="ideathon-stat__label">Teams Registered</span>
+            </div>
+            <div class="ideathon-stat">
+              <span class="ideathon-stat__number">440</span>
+              <span class="ideathon-stat__label">Teams Participated</span>
+            </div>
+            <div class="ideathon-stat">
+              <span class="ideathon-stat__number">96</span>
+              <span class="ideathon-stat__label">Grand Finalists</span>
+            </div>
+            <div class="ideathon-stat">
+              <span class="ideathon-stat__number">7</span>
+              <span class="ideathon-stat__label">Innovation Tracks</span>
+            </div>
+          </div>
+          <p class="ideathon-hero__description">Led end-to-end coordination — from ideation and team registration to
+            judging logistics and the Grand Finale. Managed cross-functional teams, corporate liaisons, and ensured
+            seamless execution at scale.</p>
+        </div>
+      </div>
+
+      <div class="activities__grid">
+        <div class="activity-card glass-card reveal delay-1">
+          <div class="activity-card__icon">🏥</div>
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Youth Red Cross (YRC)</h3>
+            <p class="activity-card__role">College Member</p>
+            <p class="activity-card__description">Coordinated social initiatives and professional events. Supported the
+              "1930 Walkathon" with ~5,000 participants.</p>
+          </div>
+        </div>
+
+        <div class="activity-card glass-card reveal delay-2">
+          <div class="activity-card__icon">📐</div>
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Maths Club</h3>
+            <p class="activity-card__role">Department Coordinator</p>
+            <p class="activity-card__description">Organized aptitude tests, paper presentations, and academic events.
+              Developed leadership and coordination skills.</p>
+          </div>
+        </div>
+
+        <div class="activity-card glass-card reveal delay-3">
+          <div class="activity-card__icon">🎤</div>
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Speaking & Presentations</h3>
+            <p class="activity-card__role">Presenter & Host</p>
+            <p class="activity-card__description">Presenter at AICTE Program. Host for Capgemini Guest Lectures &
+              Leadership Talks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills & Languages -->
+      <div class="about__extras reveal">
+        <div class="about__soft-skills">
+          <h3>🧠 Soft Skills</h3>
+          <div class="skill-card__list">
+            <span class="chip">Team Leadership</span>
+            <span class="chip">Solution-Oriented Thinking</span>
+            <span class="chip">Collaboration</span>
+            <span class="chip">Analytical Skills</span>
+            <span class="chip">Clear Communication</span>
+          </div>
+        </div>
+        <div class="about__languages">
+          <h3>🌐 Languages</h3>
+          <div class="skill-card__list">
+            <span class="chip">Tamil – Fluent</span>
+            <span class="chip">English – Fluent</span>
+            <span class="chip">Hindi – Intermediate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CONTACT SECTION
+       ════════════════════════════════════════ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__subtitle">Contact</span>
+        <h2 class="section__title">Let's Work <span class="text-gradient">Together</span></h2>
+        <p class="section__description">Have a project in mind? Drop me a message and let's create something amazing.
+        </p>
+      </div>
+
+      <div class="contact__content">
+        <div class="contact__info reveal-left">
+          <a href="mailto:naveenkumarsuresh2005@gmail.com" class="contact__item glass-card">
+            <div class="contact__item-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>naveenkumarsuresh2005@gmail.com</p>
+            </div>
+          </a>
+          <a href="tel:+919342059056" class="contact__item glass-card">
+            <div class="contact__item-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+91 9342059056</p>
+            </div>
+          </a>
+          <div class="contact__item glass-card">
+            <div class="contact__item-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>Chennai, India</p>
+            </div>
+          </div>
+          <div class="contact__item glass-card">
+            <div class="contact__item-icon">💼</div>
+            <div>
+              <h4>Status</h4>
+              <p>Seeking Software Development Intern role</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form glass-card reveal-right" id="contactForm" action="https://formspree.io/f/xgolrrrw"
+          method="POST">
+          <div class="contact__input-group">
+            <input type="text" name="name" class="contact__input" placeholder="Your Name" required />
+          </div>
+          <div class="contact__input-group">
+            <input type="email" name="email" class="contact__input" placeholder="Your Email" required />
+          </div>
+          <div class="contact__input-group">
+            <input type="text" name="subject" class="contact__input" placeholder="Subject" />
+          </div>
+          <div class="contact__input-group">
+            <textarea name="message" class="contact__textarea" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary magnetic">
+            <span>Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__top">
+        <a href="#hero" class="footer__logo">N<span>.</span></a>
+        <div class="footer__links">
+          <a href="https://github.com/Naveenkumar-s-24" target="_blank" class="footer__link">GitHub</a>
+          <a href="https://www.linkedin.com/in/naveenkumarsuresh" target="_blank" class="footer__link">LinkedIn</a>
+          <a href="mailto:naveenkumarsuresh2005@gmail.com" class="footer__link">Email</a>
+          <a href="resume.pdf" target="_blank" class="footer__link">Resume</a>
+        </div>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__copy">
+        © <span id="current-year">2026</span> <span>Naveen Kumar Suresh</span>. Crafted with 💜
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15L12 9L6 15" />
+    </svg>
+  </button>
+
+  <!-- Background Audio and Toggle -->
+  <audio id="bgAudio" loop autoplay muted preload="auto">
+    <source src="assets/audio/bg-music.mpeg" type="audio/mpeg">
+  </audio>
+  <button class="audio-toggle" id="audioToggle" aria-label="Toggle Background Music">
+    <div class="bars-container">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <span class="audio-status-text"></span>
+  </button>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Scripts -->
+  <script src="data/projects.js"></script>
+  <script src="data/internships.js"></script>
+  <script src="data/achievements.js"></script>
+  <script src="data/certificates.js"></script>
+  <script src="data/project-details.js"></script>
+  <script src="js/legendary-bg.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/stats-counter.js"></script>
+  <script src="js/micro-interactions.js"></script>
+  <script src="js/project-modal.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* ── Hero Image 3D Magnetic Tilt ── */
+    (function () {
+      const wrapper = document.querySelector('.hero__image-wrapper');
+      const img = wrapper?.querySelector('.hero__image');
+      if (!wrapper) return;
+
+      let rafId = null;
+      let currentX = 0, currentY = 0;
+      let targetX = 0, targetY = 0;
+
+      const TILT_STRENGTH = 14; /* degrees */
+      const LERP = 0.1;         /* smoothing */
+
+      function lerp(a, b, t) { return a + (b - a) * t; }
+
+      function onMove(e) {
+        const rect = wrapper.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        targetX = ((e.clientY - cy) / (rect.height / 2)) * TILT_STRENGTH;
+        targetY = ((e.clientX - cx) / (rect.width / 2)) * -TILT_STRENGTH;
+      }
+
+      function animate() {
+        currentX = lerp(currentX, targetX, LERP);
+        currentY = lerp(currentY, targetY, LERP);
+        wrapper.style.transform =
+          `perspective(600px) rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+        rafId = requestAnimationFrame(animate);
+      }
+
+      function onEnter() {
+        if (!rafId) rafId = requestAnimationFrame(animate);
+      }
+
+      function onLeave() {
+        targetX = 0; targetY = 0;
+        setTimeout(() => {
+          cancelAnimationFrame(rafId); rafId = null;
+          wrapper.style.transform = '';
+        }, 400);
+      }
+
+      /* Click: flash-scale ripple */
+      wrapper.addEventListener('click', () => {
+        img.style.transition = 'transform 0.1s ease';
+        img.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          img.style.transform = 'scale(1.04)';
+          img.style.transition = '';
+        }, 130);
+      });
+
+      wrapper.addEventListener('mouseenter', onEnter);
+      wrapper.addEventListener('mousemove', onMove);
+      wrapper.addEventListener('mouseleave', onLeave);
+    })();
+  </script>
+
+</body>
+
+</html>
